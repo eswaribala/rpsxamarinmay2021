@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:StackLayoutForm.ViewModels" x:DataType="viewmodels:LoginViewModel"
+             x:Class="StackLayoutForm.Login" BackgroundImage="logo.jpeg">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Padding="30" Spacing="40">
+            <BoxView HeightRequest="10"/>
+           <Label Text="New User? Sign Up" TextColor="DeepPink" FontSize="Large" FontAttributes="Bold" >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Frame BackgroundColor="LightSteelBlue" HasShadow="False">
+                <StackLayout Orientation="Vertical" Spacing="10">
+                    <Entry x:Name="Email" Text="{Binding Email}" Placeholder="Email"   
+                           PlaceholderColor="Gray" HeightRequest="40"   
+                           Keyboard="Email"  
+                           TextColor="Navy"/>
+                    <Entry x:Name="Password" Text="{Binding Password}" Placeholder="Senha"   
+                           PlaceholderColor="Gray" HeightRequest="40"   
+                           IsPassword="True"  
+                           TextColor="Navy"/>
+                </StackLayout>
+            </Frame>
+            <Button Command="{Binding SubmitCommand}" Text="Login" TextColor="White"  
+                    FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand"  
+                    BackgroundColor="Navy" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
